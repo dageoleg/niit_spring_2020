@@ -9,6 +9,9 @@ public interface Animal {
 
     boolean isAngry();
 
-    void hungry();
+    void hungry (); //метод делает животное голодным
 
+    boolean typeEat(Food food);//метод проверяет подходит ли тип еды животному
+
+    String inheritorClassName();// возвращает имя класса наследника
 }

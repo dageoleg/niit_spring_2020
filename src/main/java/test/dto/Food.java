@@ -1,16 +1,12 @@
 package test.dto;
 
 import java.time.LocalDateTime;
-import java.util.Random;
 
 public class Food {
     private String foodName;
     private LocalDateTime expirationDate;
     private FoodType foodType;
 
-    public void setFoodType(FoodType foodType) {
-        this.foodType = foodType;
-    }
 
     public String getFoodName() {
         return foodName;
@@ -28,5 +24,11 @@ public class Food {
         this.expirationDate = expirationDate;
     }
 
-    public enum FoodType {FOOD_DOGS,FOOD_CATS,FOOD_FISHES}
+    public FoodType getFoodType() {return foodType;}
+
+    public void setFoodType(FoodType foodType) {this.foodType = foodType;}
+
+    public enum FoodType {FOOD_FOR_DOGS,FOOD_FOR_CATS,FOOD_FOR_FISHES}
+
 }
+

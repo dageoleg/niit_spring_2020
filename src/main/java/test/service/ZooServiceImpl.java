@@ -1,6 +1,7 @@
 package test.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import test.Animal;
 import test.Zoo;
@@ -8,11 +9,13 @@ import test.dto.Food;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ZooServiceImpl implements ZooService {
     private final Zoo zoo;
+
+    @Autowired
+    private ApplicationEventPublisher publisher;
 
     @Autowired
     public ZooServiceImpl(Zoo zoo) {
@@ -29,5 +32,6 @@ public class ZooServiceImpl implements ZooService {
             }
         }
         System.out.println(angryAnimals);
+
     }
 }
